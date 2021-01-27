@@ -1,0 +1,28 @@
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+p {
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+img.head {
+    width: 50vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+    font-size: 0.8em;
+    color: darkgray;
+}
