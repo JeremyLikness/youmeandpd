@@ -26,3 +26,11 @@ img.head {
     font-size: 0.8em;
     color: darkgray;
 }
+
+.collapsed {
+   display: none;
+}
+
+.clickable {
+   cursor: pointer;
+}
