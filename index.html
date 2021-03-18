@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="38ffb483-d27f-466a-a761-4ff6c76cefd7" data-blockingmode="auto" type="text/javascript"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S26RQRFM4H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-S26RQRFM4H');
-</script>  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NK8L4BN');</script>
+<!-- End Google Tag Manager -->  
   <meta charset="utf-8">
   <meta name="title" content="You, Me, and PD (Parkinson's Disease)">
   <meta name="description" content="A podcast about living with Parkinson's Disease from the perspective of the caregiver in addition to the diagnosed.">
   <meta name="author" content="Jeremy Likness">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; connect-src https://www.google-analytics.com; font-src 'self'; form-action 'self'; frame-src 'self' https://*.cookiebot.com https://open.spotify.com; img-src 'self' data:; object-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' https://*.cookiebot.com 'sha256-xyofCizl7bHUOgva86WzlEEb7UFfnKDoL92sM3shvpw=' https://www.googletagmanager.com; prefetch-src 'self';">
+  <meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; connect-src https://www.google-analytics.com; font-src 'self'; form-action 'self'; frame-src 'self' https://*.cookiebot.com https://open.spotify.com; img-src 'self' data:; object-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-VaTudehm1CdisxH5/NiSh9C5cjSMNC9MjQSZ7vDPVmw=' https://*.cookiebot.com 'sha256-xyofCizl7bHUOgva86WzlEEb7UFfnKDoL92sM3shvpw=' https://www.googletagmanager.com; prefetch-src 'self';">
   <meta name=theme-color content="#FFFFFF">
   <meta name=thumbnail content="images/apple-touch-icon.png">
   <meta name=keywords content="PD, Parkinson's Disease, Parkinsonian, Movement Disorder">
@@ -97,6 +95,10 @@
 }</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK8L4BN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <div class="container">
      <div class="row">
       <div class="column">  
@@ -167,12 +169,31 @@
     </div>
     <div class="row">
        <div class="column footer">
-          <script id="CookieDeclaration" src="https://consent.cookiebot.com/38ffb483-d27f-466a-a761-4ff6c76cefd7/cd.js" type="text/javascript" async></script>
-
+	  <strong>Privacy and Cookies</strong> 
+          <span id="expand" alt="Click to show" title="Click to show" class="clickable">[+]</span>
+	  <span id="collapse" alt="Click to hide" title="Click to hide" class="clickable collapsed">[-]</span>
+          <div id="privacy" class="collapsed">
+	  <script id="CookieDeclaration" src="https://consent.cookiebot.com/38ffb483-d27f-466a-a761-4ff6c76cefd7/cd.js" type="text/javascript" async></script>
+          </div>
       </div>
     </div>
       
   </div>
   <div class="footer">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<script>
+	function fn() {
+                var _fn = this;
+                _fn.elems = [
+			document.getElementById("privacy"),
+	        	document.getElementById("expand"),
+			document.getElementById("collapse")
+		];
+		var toggle = () =>
+		     _fn.elems.forEach(elem => elem.classList.toggle("collapsed"));
+                _fn.elems[1].onclick = toggle;
+                _fn.elems[2].onclick = toggle;
+        };
+	setTimeout(fn, 0);
+</script>
 </body>
 </html>
