@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="A podcast about living with Parkinson's Disease from the perspective of the caregiver in addition to the diagnosed.">
   <meta name="author" content="Jeremy Likness">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; connect-src https://www.google-analytics.com; font-src 'self'; form-action 'self'; frame-src 'self' https://*.cookiebot.com https://open.spotify.com; img-src 'self' data:; object-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-VaTudehm1CdisxH5/NiSh9C5cjSMNC9MjQSZ7vDPVmw=' https://*.cookiebot.com 'sha256-xyofCizl7bHUOgva86WzlEEb7UFfnKDoL92sM3shvpw=' https://www.googletagmanager.com; prefetch-src 'self';">
+  <meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; connect-src https://www.google-analytics.com; font-src 'self'; form-action 'self'; frame-src 'self' https://*.cookiebot.com https://open.spotify.com; img-src 'self' data:; object-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-ZavxVzFKMmfOqdYXkJPozoCmYvL+ikejuhX+/ijLsJI=' https://*.cookiebot.com 'sha256-xyofCizl7bHUOgva86WzlEEb7UFfnKDoL92sM3shvpw=' https://www.googletagmanager.com; prefetch-src 'self';">
   <meta name=theme-color content="#FFFFFF">
   <meta name=thumbnail content="images/apple-touch-icon.png">
   <meta name=keywords content="PD, Parkinson's Disease, Parkinsonian, Movement Disorder">
@@ -128,8 +128,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     
     <div class="row">
-      <div class="center column">
-      <iframe data-cookieconsent="marketing" title="Spotify podcast player" src="https://open.spotify.com/embed-podcast/show/52ZpHoumSrnlomoeauzMYL" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <div class="center column" id="spotify">
+      	<a href="https://open.spotify.com/show/52ZpHoumSrnlomoeauzMYL" target="_blank">Listen on Spotify</a>
       </div>
     </div>
       <div class="row">
@@ -181,6 +181,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="footer">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 <script>
+        var spotifyEmbed = {
+        	title: "Spotify podcast player",
+                src: "https://open.spotify.com/embed-podcast/show/52ZpHoumSrnlomoeauzMYL",
+ 		width: "100%", 
+                height: "232",
+                frameborder: "0",
+                allowtransparency: "true",
+                allow: "encrypted-media"
+	};
+
+	function embedSpotify() {
+         	var spotify = document.getElementById("spotify");
+		spotify.innerHTML = '';
+		var spotifyFrame = document.createElement("iframe");
+		for (var prop in spotifyEmbed) {
+			spotifyFrame.setAttribute(prop, spotifyEmbed[prop]);
+                }
+                spotify.appendChild(spotifyFrame);  
+        }
+
+	window.addEventListener('CookiebotOnAccept', function (e) {
+      		if (Cookiebot.consent.marketing) 
+        	{
+			embedSpotify();
+        	} 
+      	}, false);
 	function fn() {
                 var _fn = this;
                 _fn.elems = [
