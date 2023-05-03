@@ -1,0 +1,70 @@
+body {
+    background-color: black;
+    color: lightgray;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h1 {
+    color: lightcoral;
+    font-weight: bold;
+}
+
+h2 {
+    color: lightskyblue;
+    font-weight: bold;
+}
+
+h3 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: goldenrod;
+    text-align: center;
+}
+
+a {
+    color: lightgreen;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.center {
+    text-align: center;
+}
+
+div.imgContainer {
+    max-width: 264px;
+    height: 600px;
+    padding: 1em;
+    float: left;
+}
+
+p {
+    font-size: 0.8em;
+    text-align: center;
+    margin: 1em;
+}
+
+img {
+    cursor: pointer;
+    max-width: 256;
+    margin: 1em;
+    -webkit-transition: -webkit-ransform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+img:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+
+.footer {
+    font-size: 0.8em;
+    text-align: center;    
+    color: lightgrey;
+}
