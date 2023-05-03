@@ -1,8 +1,8 @@
-(function () {    
+(function () {
     setTimeout(() => {
         const setup = {
             idx: 0,
-            main: {},            
+            main: {},
             queue: [],
             init: () => {
                 for (let idx = 0; idx < setup.resources.length; idx++) {
@@ -16,17 +16,17 @@
                 const div = document.createElement("div");
                 div.classList.add("imgContainer");
                 const img = document.createElement("img");
-                const idxStr = setup.idx < 10 ? `0${setup.idx}` : 
-                 `${setup.idx}`;
+                const idxStr = setup.idx < 10 ? `0${setup.idx}` :
+                    `${setup.idx}`;
                 const imgPath = `./Day ${idxStr}.png`;
-                img.src = "./Day 00.png";                
+                img.src = "./Day 00.png";
                 img.dataset.src = imgPath;
                 const resource = setup.resources[setup.idx];
                 img.alt = resource.text;
                 img.title = resource.text;
                 img.dataset.links = resource.links;
                 img.onclick = () => {
-                    window.open(imgPath,resource.text,'width=1080px,height=1350px,resizable=1');
+                    window.open(imgPath, resource.text, 'width=1080px,height=1350px,resizable=1');
                 };
                 setup.queue.push(img);
                 div.appendChild(img);
@@ -36,8 +36,8 @@
                 img.dataset.wrapper = id;
                 wrapper.style.display = "none";
                 const title = document.createElement("h3");
-                title.innerText = resource.text; 
-                wrapper.appendChild(title);          
+                title.innerText = resource.text;
+                wrapper.appendChild(title);
                 if (resource.links && resource.links.length) {
                     const p = document.createElement("p");
                     for (let idx = 0; idx < resource.links.length; idx++) {
@@ -48,13 +48,13 @@
                         a.innerText = resource.links[idx].name;
                         if (idx > 0) {
                             const span = document.createElement("span");
-                            span.innerHTML= "&nbsp;|&nbsp;";
+                            span.innerHTML = "&nbsp;|&nbsp;";
                             p.appendChild(span);
                         }
                         p.appendChild(a);
                     }
                     wrapper.appendChild(p);
-                }       
+                }
                 div.appendChild(wrapper);
                 return div;
             },
@@ -72,10 +72,11 @@
 
         fetch("./pdawareness.json")
             .then(r => r.json()
-                .then(data => setup.resources = data));
-
-        setup.main = document.getElementById("mainContainer");
-        setup.main.innerHTML = "";
-        setup.init();
+                .then(data => {
+                    setup.resources = data;
+                    setup.main = document.getElementById("mainContainer");
+                    setup.main.innerHTML = "";
+                    setup.init();
+                }));
     });
 })();
